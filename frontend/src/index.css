@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* Definición del Tema Zenith para Tailwind v4 */
+@theme {
+  --color-cafe-dark: #1a120b;
+  --color-cafe-medium: #3c2a21;
+  --color-cafe-light: #d5cea3;
+  --color-gold-accent: #e5ba73;
+  
+  --font-display: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Estilos base */
+:root {
+  background-color: var(--color-cafe-dark);
+  color: var(--color-cafe-light);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+}

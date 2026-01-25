@@ -1,0 +1,45 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Modelo de Producto (Menú)
+model Product {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String
+  price       Float
+  image       String
+  category    String    // Ej: "Café", "Postre"
+  isAvailable Boolean   @default(true)
+  
+  // Relación: Un producto puede tener muchos "Moods" asociados
+  moods       MoodTag[] 
+  
+  createdAt   DateTime  @default(now())
+}
+
+// El diferenciador: Etiquetas para el algoritmo de recomendación
+model MoodTag {
+  id        Int       @id @default(autoincrement())
+  name      String    // Ej: "Energía", "Relax", "Fresco", "Dulce"
+  
+  // Relación inversa
+  productId Int
+  product   Product   @relation(fields: [productId], references: [id])
+}
+
+// Reservas (Para el sistema "Live Preview")
+model Reservation {
+  id        Int      @id @default(autoincrement())
+  clientName String
+  date      DateTime
+  people    Int
+  status    String   @default("pending") // confirmed, cancelled
+}
