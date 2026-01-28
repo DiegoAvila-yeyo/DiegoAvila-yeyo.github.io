@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Definición del Tema Zenith para Tailwind v4 */
 @theme {
   --color-cafe-dark: #1a120b;
   --color-cafe-medium: #3c2a21;
@@ -10,7 +9,9 @@
   --font-display: "Playfair Display", serif;
   --font-body: "Inter", sans-serif;
 }
-
+body {
+  cursor: default; /* Fallback */
+}
 /* Estilos base */
 :root {
   background-color: var(--color-cafe-dark);
@@ -20,4 +21,27 @@
 
 h1, h2, h3 {
   font-family: var(--font-display);
+}
+
+/* Utilidades de animación personalizadas para Tailwind v4 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  /* La animación se define inline en los componentes usando utilidades arbitrarias o standard css */
+}
+
+
+a, button, input, select, textarea {
+  cursor: pointer;
+}
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.mobile-menu-enter {
+  animation: slideIn 0.3s ease-out forwards;
 }

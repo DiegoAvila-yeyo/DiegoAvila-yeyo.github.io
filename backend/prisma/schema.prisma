@@ -37,9 +37,11 @@ model MoodTag {
 
 // Reservas (Para el sistema "Live Preview")
 model Reservation {
-  id        Int      @id @default(autoincrement())
-  clientName String
-  date      DateTime
-  people    Int
-  status    String   @default("pending") // confirmed, cancelled
+  id          Int      @id @default(autoincrement())
+  clientName  String
+  email       String   // 📧 Crucial para enviar confirmaciones
+  date        DateTime
+  people      Int
+  type        String   // ☕ 'Cata', 'Mesa Privada', 'Trabajo'
+  status      String   @default("pending")
 }
