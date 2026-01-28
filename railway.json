@@ -4,8 +4,8 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "cd backend && npm install && npx prisma generate && node src/server.js",
+    "startCommand": "cd backend && npx prisma generate && node src/server.js",
     "restartPolicyType": "ON_FAILURE",
-    "healthcheckPath": "/api/health"
+    "healthcheckPath": null
   }
 }
