@@ -1,6 +1,6 @@
 import React from 'react';
 // Asegúrate de que las extensiones (.jpg) coincidan con tus archivos reales
-import cafe4 from '../assets/cafe45.jpg'; 
+import cafe4 from '../assets/cafe44.jpg'; 
 import cafe5 from '../assets/cafe55.jpg';
 import cafe3 from '../assets/cafe33.jpg';
 
