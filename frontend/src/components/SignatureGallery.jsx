@@ -1,7 +1,7 @@
 import React from 'react';
 // Asegúrate de que las extensiones (.jpg) coincidan con tus archivos reales
-import cafe4 from '../assets/cafe44.jpg'; 
-import cafe5 from '../assets/cafe55.jpg';
+import cafe4 from '../assets/cafe44.jpg'; // <-- Verifica que en la carpeta assets NO diga cafe4.jpg
+import cafe5 from '../assets/cafe55.jpg'; // <-- Este debería funcionar tras tu último rename
 import cafe3 from '../assets/cafe33.jpg';
 
 const SIGNATURE_COFFEES = [
